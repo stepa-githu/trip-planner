@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: avvia dev server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev"
+    },
+    {
+      "name": "Next.js: apri browser",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    }
+  ]
+}

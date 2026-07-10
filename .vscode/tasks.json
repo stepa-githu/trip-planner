@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Trip Planner: dev",
+      "type": "shell",
+      "command": "npm run dev",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Trip Planner: build",
+      "type": "shell",
+      "command": "npm run build",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Trip Planner: typecheck",
+      "type": "shell",
+      "command": "npm run typecheck",
+      "problemMatcher": []
+    },
+    {
+      "label": "Trip Planner: lint",
+      "type": "shell",
+      "command": "npm run lint",
+      "problemMatcher": []
+    }
+  ]
+}

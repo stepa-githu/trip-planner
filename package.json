@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "@google/genai": "^2.11.0",
+    "@supabase/supabase-js": "^2.110.1",
+    "@tailwindcss/postcss": "^4.3.2",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.23.0",
+    "nanoid": "^5.1.16",
+    "next": "^16.2.10",
+    "openai": "^6.45.0",
+    "postcss": "^8.5.16",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "@types/react": "19.2.17",
+    "prettier": "^3.9.4",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "typescript": "6.0.3"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write ."
+  }
+  
+}
+
