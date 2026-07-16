@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 
+
 export function createTripSlug(title: string) {
   const base = title
     .toLowerCase()
