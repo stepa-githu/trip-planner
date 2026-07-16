@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { TripAIResult } from "@/lib/ai/schemas/trip-result";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { TripResultHero } from "@/components/result/trip-result-hero";
+import { TripDayExplorer } from "@/components/result/trip-day-explorer";
 
 type PageProps = {
   params: Promise<{
@@ -49,71 +50,7 @@ export default async function TripResultPage({ params }: PageProps) {
         <TripResultHero result={result} />
 
         <div className="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
-          <section className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-black">
-              Itinerario giorno per giorno
-            </h2>
-
-            <div className="mt-6 space-y-5">
-              {result.days.map((day) => (
-                <article
-                  key={day.day}
-                  className="rounded-3xl border border-slate-200 p-5"
-                >
-                  <h3 className="text-xl font-black">
-                    Giorno {day.day} — {day.title}
-                  </h3>
-
-                  <div className="mt-4 grid gap-3">
-                    {[...day.morning, ...day.afternoon, ...day.evening].map(
-                      (activity, index) => (
-                        <div
-                          key={`${day.day}-${index}`}
-                          className="rounded-2xl bg-slate-50 p-4"
-                        >
-                          <p className="text-xs font-black uppercase tracking-wide text-violet-600">
-                            {activity.time}
-                          </p>
-
-                          <h4 className="mt-1 font-black">
-                            {activity.title}
-                          </h4>
-
-                          <p className="mt-1 text-sm leading-6 text-slate-600">
-                            {activity.description}
-                          </p>
-
-                          <p className="mt-2 text-xs text-slate-500">
-                            {activity.locationName}
-                          </p>
-                        </div>
-                      )
-                    )}
-                  </div>
-
-                  <div className="mt-4 grid gap-3 md:grid-cols-2">
-                    <div className="rounded-2xl bg-blue-50 p-4">
-                      <p className="text-sm font-black text-blue-700">
-                        Alternativa pioggia
-                      </p>
-                      <p className="mt-1 text-sm text-blue-950">
-                        {day.rainyDayAlternative}
-                      </p>
-                    </div>
-
-                    <div className="rounded-2xl bg-fuchsia-50 p-4">
-                      <p className="text-sm font-black text-fuchsia-700">
-                        Alternativa low stress
-                      </p>
-                      <p className="mt-1 text-sm text-fuchsia-950">
-                        {day.lowStressAlternative}
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
+          <TripDayExplorer days={result.days} />
 
           <aside className="space-y-6">
             <section className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
